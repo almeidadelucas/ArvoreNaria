@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1536512002 source:c:\users\lucas\desktop\arvorenaria\main.cpp
+	<iostream>
+	"MinhaInformacao.h"
+	"ArvoreNaria.h"
+
+1536501143 source:c:\users\lucas\desktop\arvorenaria\src\informacao.cpp
+	"Informacao.h"
+
+1536501155 c:\users\lucas\desktop\arvorenaria\include\informacao.h
+
+1536510139 source:c:\users\lucas\desktop\arvorenaria\src\minhainformacao.cpp
+	"MinhaInformacao.h"
+	"Informacao.h"
+	<iostream>
+
+1536511332 c:\users\lucas\desktop\arvorenaria\include\minhainformacao.h
+	"Informacao.h"
+
+1536511729 source:c:\users\lucas\desktop\arvorenaria\src\arvorenaria.cpp
+	"ArvoreNaria.h"
+
+1536511257 c:\users\lucas\desktop\arvorenaria\include\arvorenaria.h
+	"Informacao.h"
+	"No.h"
+	<iostream>
+
+1536510402 c:\users\lucas\desktop\arvorenaria\include\no.h
+	"Informacao.h"
+	<iostream>
+
+1536515052 source:c:\users\lucas\desktop\arvorenaria\src\no.cpp
+	"No.h"
+	<iostream>
+
