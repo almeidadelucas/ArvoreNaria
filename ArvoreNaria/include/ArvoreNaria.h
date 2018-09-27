@@ -10,6 +10,7 @@ class ArvoreNaria
         ArvoreNaria(int) throw(char*);
         virtual ~ArvoreNaria();
         void inserir(Informacao*) throw(char*);
+        void excluir(Informacao*) throw(char*);
         bool tem(Informacao*) throw(char*);
         friend ostream& operator<<(ostream&, const ArvoreNaria&);
     private:

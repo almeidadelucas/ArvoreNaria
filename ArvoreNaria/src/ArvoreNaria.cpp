@@ -24,6 +24,11 @@ void ArvoreNaria::inserir(Informacao* in) throw(char*)
     this->raiz = inserir(this->raiz, in);
 }
 
+void ArvoreNaria::excluir(Informacao* in) throw(char*)
+{
+
+}
+
 No* ArvoreNaria::inserir(No* no, Informacao* in)
 {
     if(no == NULL)

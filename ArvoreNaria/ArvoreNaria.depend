@@ -33,3 +33,26 @@
 	"No.h"
 	<iostream>
 
+1536841594 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\main.cpp
+	<iostream>
+	"MinhaInformacao.h"
+	"ArvoreNaria.h"
+
+1536841593 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\minhainformacao.h
+	"Informacao.h"
+
+1536841593 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\informacao.h
+
+1536841593 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\arvorenaria.h
+	"Informacao.h"
+	"No.h"
+	<iostream>
+
+1536841594 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\no.h
+	"Informacao.h"
+	<iostream>
+
+1536841595 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\src\no.cpp
+	"No.h"
+	<iostream>
+
