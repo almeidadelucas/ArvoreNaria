@@ -123,3 +123,37 @@ void No::printar(ostream& os)
 
     os << ")";
 }
+
+int No::getQtsInformacoes()
+{
+    return this->qtsInformacoes;
+}
+
+bool No::ehFolha()
+{
+    for(int i = 0; i < ordem; i++)
+        if(vetPtr[i] != NULL)
+            return false;
+    return true;
+}
+
+void No::excluir(Informacao* in)
+{
+    if(ehFolha())
+        for(int i = 0; i < this->ordem-1; i++)
+            if(vetInfo[i]->compareTo(in) == 0)
+            {
+                vetInfo[i] = NULL;
+                this->moverParaEsq(i);
+                break;
+            }
+}
+
+void No::moverParaEsq(int pos)
+{
+    int i;
+    for(i = pos; i < this->ordem-2; i++)
+        vetInfo[i] = vetInfo[i+1];
+
+    vetInfo[i] = NULL;
+}

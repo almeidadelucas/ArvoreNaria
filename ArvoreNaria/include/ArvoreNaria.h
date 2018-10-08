@@ -16,6 +16,7 @@ class ArvoreNaria
     private:
         int ordem;
         No* inserir(No*, Informacao*);
+        No* excluir(No*, Informacao*);
         bool tem(No*, Informacao*);
         No* raiz;
 };

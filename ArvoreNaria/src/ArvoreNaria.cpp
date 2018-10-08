@@ -1,5 +1,4 @@
 #include "ArvoreNaria.h"
-
 ArvoreNaria::ArvoreNaria(int n) throw(char*)
 {
     if(n <= 1)
@@ -20,13 +19,17 @@ void ArvoreNaria::inserir(Informacao* in) throw(char*)
         throw("A informação não pode ser nula!");
     if(tem(in))
         throw("A informação já existe na ávore!");
-
     this->raiz = inserir(this->raiz, in);
 }
 
 void ArvoreNaria::excluir(Informacao* in) throw(char*)
 {
+    if(in == NULL)
+        throw("A informação não pode ser nula!");
+    if(!tem(in))
+       throw("A informação não existe na ávore!");
 
+    this->raiz = excluir(this->raiz, in);
 }
 
 No* ArvoreNaria::inserir(No* no, Informacao* in)
@@ -61,6 +64,24 @@ No* ArvoreNaria::inserir(No* no, Informacao* in)
     return no;
 }
 
+No* ArvoreNaria::excluir(No* no, Informacao* in)
+{
+    if(no == NULL || no->getQtsInformacoes() == 0)
+        return no;
+
+    if(no->ehFolha() && no->getQtsInformacoes() == 1)
+    {
+        delete(no);
+        return NULL;
+    }
+
+    if(no->ehFolha())
+    {
+        no->excluir(in);
+        return no;
+    }
+}
+
 bool ArvoreNaria::tem(Informacao* in) throw(char*)
 {
     if(in == NULL)
@@ -73,19 +94,16 @@ bool ArvoreNaria::tem(No* no, Informacao* in)
 {
     if(no == NULL)
         return false;
-
-    for(int i = 0; i < this->ordem; i++)
+    int i;
+    for(i = 0; i < no->getQtsInformacoes(); i++)
     {
         int c = in->compareTo(no->getInfo(i));
         if(c < 0)
             return tem(no->getPtr(i), in);
-        if(c > 0)
-            return tem(no->getPtr(i+1), in);
-        // c == 0
-        return true;
+        if(c == 0)
+            return true;
     }
-
-    return tem(no->getPtr(this->ordem), in);
+    return tem(no->getPtr(i), in);
 }
 
 ostream& operator<<(ostream& os, const ArvoreNaria& ar)
