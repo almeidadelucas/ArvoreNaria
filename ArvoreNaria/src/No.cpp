@@ -157,3 +157,16 @@ void No::moverParaEsq(int pos)
 
     vetInfo[i] = NULL;
 }
+
+void No::setInfo(Informacao* in, int pos)
+{
+    vetInfo[pos] = in;
+}
+
+int No::getPos(Informacao* in)
+{
+    for(int i = 0; i < qtsInformacoes; i++)
+        if(vetInfo[i]->compareTo(in) == 0)
+            return i;
+    return -1; // não existe essa informação nesse nó
+}

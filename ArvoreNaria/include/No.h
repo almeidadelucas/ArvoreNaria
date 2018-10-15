@@ -17,6 +17,9 @@ class No
         void        excluir(Informacao*);
         int         getOrdem();
         int         getQtsInformacoes();
+        int         getPos(Informacao*);
+        void        setInfo(Informacao*, int);
+        void         moverParaEsq(int);
         bool        temEspaco();
         bool        ehFolha();
     private:
@@ -25,7 +28,6 @@ class No
         int          ordem;
         int          qtsInformacoes;
         void         inserir(int, Informacao*);
-        void         moverParaEsq(int);
 };
 
 #endif // NO_H

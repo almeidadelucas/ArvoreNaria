@@ -49,7 +49,7 @@ No* ArvoreNaria::inserir(No* no, Informacao* in)
 
     int i;
 
-    for(i = 0; i < this->ordem; i++)
+    for(i = 0; i < this->ordem-1; i++)
     {
         int c = in->compareTo(no->getInfo(i));
         if(c < 0)
@@ -58,7 +58,7 @@ No* ArvoreNaria::inserir(No* no, Informacao* in)
             break;
         }
     }
-    if(i == this->ordem)
+    if(i == this->ordem-1)
         no->setPtr(i, this->inserir(no->getPtr(i), in));
 
     return no;
@@ -66,20 +66,86 @@ No* ArvoreNaria::inserir(No* no, Informacao* in)
 
 No* ArvoreNaria::excluir(No* no, Informacao* in)
 {
+    bool ehFolha = no->ehFolha();
+    int c, i;
+
     if(no == NULL || no->getQtsInformacoes() == 0)
         return no;
 
-    if(no->ehFolha() && no->getQtsInformacoes() == 1)
+    // verifica se a informação está nesse nó
+    for(i = 0; i < no->getQtsInformacoes(); i++)
+    {
+        int c = in->compareTo(no->getInfo(i));
+        if(c == 0)
+            break;
+        if(c < 0)
+        {
+            no->setPtr(i,excluir(no->getPtr(i), in));
+            return no;
+        }
+    }
+
+    if(i == no->getQtsInformacoes()) // significa q saiu do for pq acabou o for e não pq a informacao está no nó
+    {
+        no->setPtr(i, excluir(no->getPtr(i), in));
+        return no;
+    }
+
+    if(ehFolha && no->getQtsInformacoes() == 1)
     {
         delete(no);
         return NULL;
     }
 
-    if(no->ehFolha())
+    if(ehFolha)
     {
         no->excluir(in);
         return no;
     }
+
+    if(!ehFolha)
+    {
+        int pos = no->getPos(in);
+        if(no->getPtr(pos) != NULL)
+        {
+            Informacao* info = getMaiorDosMenores(no->getPtr(pos));
+            no->setInfo(info, pos);
+            return no;
+        }
+        if(no->getPtr(pos + 1) != NULL)
+        {
+            Informacao* info = getMenorDosMaiores(no->getPtr(pos+1));
+            for(i = 0; i < no->getQtsInformacoes(); i++)
+                if(no->getInfo(i)->compareTo(in) == 0)
+                    no->setInfo(info, i);
+            return no;
+        }
+    }
+}
+
+Informacao* ArvoreNaria::getMaiorDosMenores(No* no)
+{
+    if(no->ehFolha())
+    {
+        Informacao* in = no->getInfo(no->getQtsInformacoes()-1);
+        no->setInfo(NULL, no->getQtsInformacoes()-1);
+        return in;
+    }
+    else
+        return getMaiorDosMenores(no->getPtr(no->getQtsInformacoes()));
+}
+
+Informacao* ArvoreNaria::getMenorDosMaiores(No* no)
+{
+    if(no->ehFolha())
+    {
+        Informacao* in = no->getInfo(0);
+        no->setInfo(NULL, 0);
+        no->moverParaEsq(0);
+        return in;
+    }
+    else
+        return getMenorDosMaiores(no->getPtr(0));
 }
 
 bool ArvoreNaria::tem(Informacao* in) throw(char*)

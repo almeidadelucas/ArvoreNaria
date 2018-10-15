@@ -67,3 +67,37 @@
 1538678139 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\src\arvorenaria.cpp
 	"ArvoreNaria.h"
 
+1539632209 source:c:\users\lucas\documents\github\arvorenariacpp\arvorenaria\main.cpp
+	<iostream>
+	"MinhaInformacao.h"
+	"ArvoreNaria.h"
+
+1536516238 c:\users\lucas\documents\github\arvorenariacpp\arvorenaria\include\minhainformacao.h
+	"Informacao.h"
+
+1536516238 c:\users\lucas\documents\github\arvorenariacpp\arvorenaria\include\informacao.h
+
+1539630505 c:\users\lucas\documents\github\arvorenariacpp\arvorenaria\include\arvorenaria.h
+	"Informacao.h"
+	"No.h"
+	<iostream>
+
+1539630550 c:\users\lucas\documents\github\arvorenariacpp\arvorenaria\include\no.h
+	"Informacao.h"
+	<iostream>
+
+1539633953 source:c:\users\lucas\documents\github\arvorenariacpp\arvorenaria\src\arvorenaria.cpp
+	"ArvoreNaria.h"
+
+1536516238 source:c:\users\lucas\documents\github\arvorenariacpp\arvorenaria\src\informacao.cpp
+	"Informacao.h"
+
+1536516238 source:c:\users\lucas\documents\github\arvorenariacpp\arvorenaria\src\minhainformacao.cpp
+	"MinhaInformacao.h"
+	"Informacao.h"
+	<iostream>
+
+1539634020 source:c:\users\lucas\documents\github\arvorenariacpp\arvorenaria\src\no.cpp
+	"No.h"
+	<iostream>
+

@@ -19,6 +19,8 @@ class ArvoreNaria
         No* excluir(No*, Informacao*);
         bool tem(No*, Informacao*);
         No* raiz;
+        Informacao* getMaiorDosMenores(No*);
+        Informacao* getMenorDosMaiores(No*);
 };
 
 #endif // ARVORENARIA_H
