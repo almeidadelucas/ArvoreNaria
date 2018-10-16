@@ -19,9 +19,10 @@ class No
         int         getQtsInformacoes();
         int         getPos(Informacao*);
         void        setInfo(Informacao*, int);
-        void         moverParaEsq(int);
+        void        moverParaEsq(int);
         bool        temEspaco();
         bool        ehFolha();
+        void        ordenar();
     private:
         Informacao** vetInfo;
         No**         vetPtr;

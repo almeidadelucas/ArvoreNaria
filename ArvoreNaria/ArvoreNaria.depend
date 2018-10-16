@@ -33,38 +33,38 @@
 	"No.h"
 	<iostream>
 
-1538677697 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\main.cpp
+1539688643 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\main.cpp
 	<iostream>
 	"MinhaInformacao.h"
 	"ArvoreNaria.h"
 
-1538672541 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\minhainformacao.h
+1536841593 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\minhainformacao.h
 	"Informacao.h"
 
-1538672541 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\informacao.h
+1536841593 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\informacao.h
 
-1538673371 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\arvorenaria.h
+1539687041 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\arvorenaria.h
 	"Informacao.h"
 	"No.h"
 	<iostream>
 
-1538674716 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\no.h
+1539687640 c:\users\u16712\documents\github\arvorenaria\arvorenaria\include\no.h
 	"Informacao.h"
 	<iostream>
 
-1538675833 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\src\no.cpp
+1539688231 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\src\no.cpp
 	"No.h"
 	<iostream>
 
-1538672541 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\src\informacao.cpp
+1536841595 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\src\informacao.cpp
 	"Informacao.h"
 
-1538675969 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\src\minhainformacao.cpp
+1536841595 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\src\minhainformacao.cpp
 	"MinhaInformacao.h"
 	"Informacao.h"
 	<iostream>
 
-1538678139 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\src\arvorenaria.cpp
+1539688165 source:c:\users\u16712\documents\github\arvorenaria\arvorenaria\src\arvorenaria.cpp
 	"ArvoreNaria.h"
 
 1539632209 source:c:\users\lucas\documents\github\arvorenariacpp\arvorenaria\main.cpp

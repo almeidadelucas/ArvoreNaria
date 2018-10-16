@@ -120,6 +120,28 @@ No* ArvoreNaria::excluir(No* no, Informacao* in)
                     no->setInfo(info, i);
             return no;
         }
+        // Os dois ponteiros são nulos
+        for(i = 1; ; i++)
+        {
+            if(pos + i < no->getOrdem()-1)
+            {
+                if(no->getPtr(pos+i) != NULL)
+                {
+                    Informacao* in = getMenorDosMaiores(no->getPtr(pos+i));
+                    no->setInfo(in, pos);
+                    no->ordenar();
+                    return no;
+                }
+            }
+            else if(pos - i >= 0)
+                if(no->getPtr(pos-i) != NULL)
+                {
+                    Informacao* in = getMaiorDosMenores(no->getPtr(pos-i));
+                    no->setInfo(in, pos);
+                    no->ordenar();
+                    return no;
+                }
+        }
     }
 }
 
