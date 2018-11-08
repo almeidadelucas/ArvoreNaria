@@ -100,6 +100,12 @@ No* ArvoreNaria::excluir(No* no, Informacao* in)
     if(ehFolha)
     {
         no->excluir(in);
+        if(no->getQtsInformacoes() == 0)
+        {
+            delete(no);
+            return NULL;
+        }
+
         return no;
     }
 
@@ -109,15 +115,17 @@ No* ArvoreNaria::excluir(No* no, Informacao* in)
         if(no->getPtr(pos) != NULL)
         {
             Informacao* info = getMaiorDosMenores(no->getPtr(pos));
+            excluir(info);
             no->setInfo(info, pos);
             return no;
         }
         if(no->getPtr(pos + 1) != NULL)
         {
             Informacao* info = getMenorDosMaiores(no->getPtr(pos+1));
-            for(i = 0; i < no->getQtsInformacoes(); i++)
-                if(no->getInfo(i)->compareTo(in) == 0)
-                    no->setInfo(info, i);
+            excluir(info);
+            //for(i = 0; i < no->getQtsInformacoes(); i++)
+                //if(no->getInfo(i)->compareTo(in) == 0)
+            no->setInfo(info, pos);
             return no;
         }
         // Os dois ponteiros são nulos
@@ -147,27 +155,26 @@ No* ArvoreNaria::excluir(No* no, Informacao* in)
 
 Informacao* ArvoreNaria::getMaiorDosMenores(No* no)
 {
-    if(no->ehFolha())
+    if(no->getPtr(no->getQtsInformacoes()) != NULL)
+        return getMaiorDosMenores(no->getPtr(no->getQtsInformacoes()));
+    else
     {
         Informacao* in = no->getInfo(no->getQtsInformacoes()-1);
-        no->setInfo(NULL, no->getQtsInformacoes()-1);
+        //no->setInfo(NULL, no->getQtsInformacoes()-1);
+        //no = excluir(no, in);
         return in;
     }
-    else
-        return getMaiorDosMenores(no->getPtr(no->getQtsInformacoes()));
 }
 
 Informacao* ArvoreNaria::getMenorDosMaiores(No* no)
 {
-    if(no->ehFolha())
+    if(no->getPtr(0) != NULL)
+        return getMenorDosMaiores(no->getPtr(0));
+    else
     {
         Informacao* in = no->getInfo(0);
-        no->setInfo(NULL, 0);
-        no->moverParaEsq(0);
         return in;
     }
-    else
-        return getMenorDosMaiores(no->getPtr(0));
 }
 
 bool ArvoreNaria::tem(Informacao* in) throw(char*)

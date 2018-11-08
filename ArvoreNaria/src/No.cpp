@@ -147,6 +147,7 @@ void No::excluir(Informacao* in)
                 this->moverParaEsq(i);
                 break;
             }
+    qtsInformacoes--;
 }
 
 void No::moverParaEsq(int pos)
@@ -161,6 +162,8 @@ void No::moverParaEsq(int pos)
 void No::setInfo(Informacao* in, int pos)
 {
     vetInfo[pos] = in;
+    if(in == NULL)
+        qtsInformacoes--;
 }
 
 void No::ordenar()

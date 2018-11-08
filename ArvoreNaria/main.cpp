@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 #include "MinhaInformacao.h"
 #include "ArvoreNaria.h"
 
@@ -11,39 +12,38 @@ int main()
 
         MinhaInformacao* mi1 = new MinhaInformacao(8);
         MinhaInformacao* mi2 = new MinhaInformacao(10);
-        MinhaInformacao* mi3 = new MinhaInformacao(4);
-        MinhaInformacao* mi4 = new MinhaInformacao(6);
+        MinhaInformacao* mi3 = new MinhaInformacao(11);
+        MinhaInformacao* mi4 = new MinhaInformacao(14);
         MinhaInformacao* mi5 = new MinhaInformacao(12);
-        MinhaInformacao* mi6 = new MinhaInformacao(14);
-        MinhaInformacao* mi7 = new MinhaInformacao(16);
-        MinhaInformacao* mi8 = new MinhaInformacao(18);
+        MinhaInformacao* mi6 = new MinhaInformacao(13);
+        //MinhaInformacao* mi7 = new MinhaInformacao(16);
+        //MinhaInformacao* mi8 = new MinhaInformacao(18);
 
         cout << ar << "\n";
 
-        ar.inserir(mi1);
-        ar.inserir(mi2);
-        ar.inserir(mi3);
-        ar.inserir(mi4);
-        ar.inserir(mi5);
         ar.inserir(mi6);
-        ar.inserir(mi7);
-        ar.inserir(mi8);
-
-        cout << ar << "\n";
-        ar.excluir(mi1);
-
+        ar.inserir(mi5);
+        ar.inserir(mi4);
+        ar.inserir(mi3);
+        ar.inserir(mi2);
+        ar.inserir(mi1);
+        //ar.inserir(mi7);
+        //ar.inserir(mi8);
         cout << ar << "\n";
 
         ar.excluir(mi6);
         cout << ar << "\n";
 
-        ar.excluir(mi8);
-        cout << ar << "\n";
+       // ar.excluir(mi5);
+        //cout << ar << "\n";
+
+        //ar.excluir(mi8);
+        //cout << ar << "\n";
 
     }
-    catch(char* e)
+    catch(invalid_argument e)
     {
-        cout << e;
+        cerr << e.what();
     }
 
     return 0;
