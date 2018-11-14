@@ -133,7 +133,8 @@ bool No::ehFolha()
 {
     for(int i = 0; i < ordem; i++)
         if(vetPtr[i] != NULL)
-            return false;
+           return false;
+
     return true;
 }
 

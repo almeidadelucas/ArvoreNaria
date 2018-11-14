@@ -30,3 +30,8 @@ int MinhaInformacao::compareTo(Informacao* in) throw(char*)
     return 0;
     //return this->codigo - mi->getCodigo()
 }
+
+Informacao* MinhaInformacao::clone()
+{
+    return new MinhaInformacao(this->getCodigo());
+}

@@ -9,6 +9,7 @@ class MinhaInformacao : public Informacao
         virtual ~MinhaInformacao();
         int getCodigo();
         int compareTo(Informacao*) throw(char*);
+        Informacao* clone();
     private:
         int codigo;
 };

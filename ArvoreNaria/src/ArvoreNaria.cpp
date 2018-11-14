@@ -114,17 +114,15 @@ No* ArvoreNaria::excluir(No* no, Informacao* in)
         int pos = no->getPos(in);
         if(no->getPtr(pos) != NULL)
         {
-            Informacao* info = getMaiorDosMenores(no->getPtr(pos));
+            Informacao* info = getMaiorDosMenores(no->getPtr(pos))->clone();
             excluir(info);
             no->setInfo(info, pos);
             return no;
         }
         if(no->getPtr(pos + 1) != NULL)
         {
-            Informacao* info = getMenorDosMaiores(no->getPtr(pos+1));
+            Informacao* info = getMenorDosMaiores(no->getPtr(pos+1))->clone();
             excluir(info);
-            //for(i = 0; i < no->getQtsInformacoes(); i++)
-                //if(no->getInfo(i)->compareTo(in) == 0)
             no->setInfo(info, pos);
             return no;
         }
@@ -135,7 +133,8 @@ No* ArvoreNaria::excluir(No* no, Informacao* in)
             {
                 if(no->getPtr(pos+i) != NULL)
                 {
-                    Informacao* in = getMenorDosMaiores(no->getPtr(pos+i));
+                    Informacao* in = getMenorDosMaiores(no->getPtr(pos+i))->clone();
+                    excluir(in);
                     no->setInfo(in, pos);
                     no->ordenar();
                     return no;
@@ -144,7 +143,8 @@ No* ArvoreNaria::excluir(No* no, Informacao* in)
             else if(pos - i >= 0)
                 if(no->getPtr(pos-i) != NULL)
                 {
-                    Informacao* in = getMaiorDosMenores(no->getPtr(pos-i));
+                    Informacao* in = getMaiorDosMenores(no->getPtr(pos-i))->clone();
+                    excluir(in);
                     no->setInfo(in, pos);
                     no->ordenar();
                     return no;
@@ -160,8 +160,6 @@ Informacao* ArvoreNaria::getMaiorDosMenores(No* no)
     else
     {
         Informacao* in = no->getInfo(no->getQtsInformacoes()-1);
-        //no->setInfo(NULL, no->getQtsInformacoes()-1);
-        //no = excluir(no, in);
         return in;
     }
 }
