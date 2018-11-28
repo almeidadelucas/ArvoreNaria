@@ -7,11 +7,11 @@
 class ArvoreNaria
 {
     public:
-        ArvoreNaria(int) throw(char*);
+        ArvoreNaria(int);
         virtual ~ArvoreNaria();
-        void inserir(Informacao*) throw(char*);
-        void excluir(Informacao*) throw(char*);
-        bool tem(Informacao*) throw(char*);
+        void inserir(Informacao*);
+        void excluir(Informacao*);
+        bool tem(Informacao*);
         friend ostream& operator<<(ostream&, const ArvoreNaria&);
     private:
         int ordem;

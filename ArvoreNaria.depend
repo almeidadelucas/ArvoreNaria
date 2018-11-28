@@ -102,3 +102,45 @@
 	"No.h"
 	<iostream>
 
+1543251470 source:e:\projetos\arvorenaria\arvorenaria\main.cpp
+	<iostream>
+	<stdexcept>
+	"MinhaInformacao.h"
+	"ArvoreNaria.h"
+
+1543408530 e:\projetos\arvorenaria\arvorenaria\include\minhainformacao.h
+	"Informacao.h"
+
+1543406454 e:\projetos\arvorenaria\arvorenaria\include\informacao.h
+	<string>
+
+1543408486 e:\projetos\arvorenaria\arvorenaria\include\arvorenaria.h
+	"Informacao.h"
+	"No.h"
+	<iostream>
+
+1543408604 e:\projetos\arvorenaria\arvorenaria\include\no.h
+	"Informacao.h"
+	<iostream>
+
+1543408512 source:e:\projetos\arvorenaria\arvorenaria\src\arvorenaria.cpp
+	"ArvoreNaria.h"
+	<iostream>
+	<stdexcept>
+
+1538676142 source:e:\projetos\arvorenaria\arvorenaria\src\informacao.cpp
+	"Informacao.h"
+
+1543408556 source:e:\projetos\arvorenaria\arvorenaria\src\minhainformacao.cpp
+	"MinhaInformacao.h"
+	"Informacao.h"
+	<iostream>
+	<stdexcept>
+	<string>
+	<sstream>
+
+1543408692 source:e:\projetos\arvorenaria\arvorenaria\src\no.cpp
+	"No.h"
+	<iostream>
+	<stdexcept>
+

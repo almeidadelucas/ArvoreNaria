@@ -8,8 +8,9 @@ class MinhaInformacao : public Informacao
         MinhaInformacao(int);
         virtual ~MinhaInformacao();
         int getCodigo();
-        int compareTo(Informacao*) throw(char*);
+        int compareTo(Informacao*);
         Informacao* clone();
+        std::string toString();
     private:
         int codigo;
 };

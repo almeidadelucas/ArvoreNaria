@@ -1,10 +1,13 @@
 #include "No.h"
 #include <iostream>
+#include <stdexcept>
 
-No::No(int n) throw(char*)
+using namespace std;
+
+No::No(int n)
 {
     if(n <= 1)
-        throw("A ordem deve ser no mínimo 2!");
+        throw invalid_argument("A ordem deve ser no mínimo 2!");
 
     this->ordem = n;
     this->vetInfo = new Informacao*[n - 1];
@@ -24,24 +27,24 @@ No::~No()
 {
 }
 
-Informacao* No::getInfo(int pos) throw(char*)
+Informacao* No::getInfo(int pos)
 {
     if(pos >= this->ordem)
-        throw("Posição inválida!");
+        throw invalid_argument("Posição inválida!");
     return vetInfo[pos];
 }
 
-No* No::getPtr(int pos) throw(char*)
+No* No::getPtr(int pos)
 {
     if(pos > this->ordem)
-        throw("Posição inválida!");
+        throw invalid_argument("Posição inválida!");
     return vetPtr[pos];
 }
 
-void No::setPtr(int pos, No* no) throw(char*)
+void No::setPtr(int pos, No* no)
 {
     if(pos > this->ordem)
-        throw("Posição inválida!");
+        throw invalid_argument("Posição inválida!");
     this->vetPtr[pos] = no;
 }
 
@@ -55,12 +58,12 @@ bool No::temEspaco()
     return this->qtsInformacoes != (this->getOrdem()-1);
 }
 
-void No::inserirInfo(Informacao* in) throw(char*)
+void No::inserirInfo(Informacao* in)
 {
     if(in == NULL)
-        throw("A informação não pode ser nula");
+        throw invalid_argument("A informação não pode ser nula");
     if(!this->temEspaco())
-        throw("O nó está cheio");
+        throw invalid_argument("O nó está cheio");
 
     if(this->qtsInformacoes == 0)
         this->inserir(0, in);
@@ -115,7 +118,7 @@ void No::printar(ostream& os)
         if(this->getPtr(i) != NULL)
             this->getPtr(i)->printar(os);
         if(this->getInfo(i) != NULL)
-            os << this->getInfo(i)->getCodigo() << " ";
+            os << this->getInfo(i)->toString() << " ";
     }
 
     if(this->getPtr(this->ordem) != NULL)

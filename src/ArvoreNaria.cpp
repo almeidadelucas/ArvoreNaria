@@ -1,8 +1,13 @@
 #include "ArvoreNaria.h"
-ArvoreNaria::ArvoreNaria(int n) throw(char*)
+#include <iostream>
+#include <stdexcept>
+
+using namespace std;
+
+ArvoreNaria::ArvoreNaria(int n)
 {
     if(n <= 1)
-        throw("A ordem precisa ser no mínimo 2!");
+        throw invalid_argument("A ordem precisa ser no mínimo 2!");
 
     this->ordem = n;
     this->raiz = NULL;
@@ -13,21 +18,21 @@ ArvoreNaria::~ArvoreNaria()
     delete this->raiz;
 }
 
-void ArvoreNaria::inserir(Informacao* in) throw(char*)
+void ArvoreNaria::inserir(Informacao* in)
 {
     if(in == NULL)
-        throw("A informação não pode ser nula!");
+        throw invalid_argument("A informação não pode ser nula!");
     if(tem(in))
-        throw("A informação já existe na ávore!");
+        throw invalid_argument("A informação já existe na ávore!");
     this->raiz = inserir(this->raiz, in);
 }
 
-void ArvoreNaria::excluir(Informacao* in) throw(char*)
+void ArvoreNaria::excluir(Informacao* in)
 {
     if(in == NULL)
-        throw("A informação não pode ser nula!");
+        throw invalid_argument("A informação não pode ser nula!");
     if(!tem(in))
-       throw("A informação não existe na ávore!");
+        throw invalid_argument("A informação não existe na ávore!");
 
     this->raiz = excluir(this->raiz, in);
 }
@@ -175,10 +180,10 @@ Informacao* ArvoreNaria::getMenorDosMaiores(No* no)
     }
 }
 
-bool ArvoreNaria::tem(Informacao* in) throw(char*)
+bool ArvoreNaria::tem(Informacao* in)
 {
     if(in == NULL)
-        throw("A informação não pode ser nula");
+        throw invalid_argument("A informação não pode ser nula");
 
     return tem(this->raiz, in);
 }
